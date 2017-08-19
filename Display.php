@@ -4,13 +4,13 @@ $username = "root";
 $password = "";
 $myDb = "hng_testdb";
 $con = mysqli_connect($servername, $username, $password, $myDb);
-$dbselect = mysqli_select_db($myDb);
+$dbselect = mysqli_select_db($con,$myDb);
 if (!$con) {
         die('could not connect: ' . mysql_error());
     }
 $sql = 'SELECT * FROM profile';
 		
-$query = mysql_query($sql);
+$query = mysqli_query($con,$sql);
 if (!$query) {
 	die ('SQL Error');
 }
@@ -20,7 +20,7 @@ if (!$query) {
     <head>
         <title>HNG Stage 1</title>
 <style>
-    body {background-color:lightgray}
+    body {background-color:skyblue}
         div.content {
             margin: 100px auto;
             width: 50%;
@@ -58,7 +58,7 @@ if (!$query) {
 		<tbody>
 		<?php
 		$no 	= 1;
-		while ($row = mysql_fetch_array($query))
+		while ($row = mysqli_fetch_array($query))
 		{
 			
 			echo '<tr>

@@ -13,7 +13,7 @@ if (!$con) {
     <head>
         <title>HNG stage 1</title>
 <style>
-    body {background-color:lightgray}
+    body {background-color:skyblue}
         div.content {
             margin: 100px auto;
             width: 50%;
@@ -46,7 +46,7 @@ if (!$con) {
         $result = mysqli_query($con,$query); 
         
         if($result){
-            echo "successfull"; Display.php();
+            header('location:  Display.php');
         }  
         else {
 			var_dump($result);
