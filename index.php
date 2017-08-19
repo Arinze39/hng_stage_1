@@ -42,7 +42,7 @@ if (!$con) {
         $gender = $_POST['gender'];
 	    $job = $_POST['job'];         
 			
-        $query = "INSERT INTO `profile` (`FullName`, `Gender`, `Job`) VALUES('$fullname','$gender','job');";
+        $query = "INSERT INTO `profile` (`FullName`, `Gender`, `Job`) VALUES('$fullname','$gender','$job');";
         $result = mysqli_query($con,$query); 
         
         if($result){
